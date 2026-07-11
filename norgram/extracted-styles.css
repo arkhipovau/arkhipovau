@@ -1,0 +1,21 @@
+@font-face {
+				font-family: 'Helvetica Now Display - Medium';
+				font-style: normal;
+				font-weight: 500;
+				font-display: block;
+				src: url(./fonts/helvetica-now-display-medium.ttf) format('truetype');
+			}
+			@font-face {
+				font-family: 'Helvetica Now Display - Regular';
+				font-style: normal;
+				font-weight: 500;
+				font-display: block;
+				src: url(./fonts/helvetica-now-display-regular.ttf) format('truetype');
+			}
+			@font-face {
+				font-family: 'PS Times Trial';
+				font-style: normal;
+				font-weight: 500;
+				font-display: block;
+				src: url(./fonts/ps-times-trial-regular.otf) format('opentype');
+			}

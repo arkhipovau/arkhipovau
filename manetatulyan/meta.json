@@ -1,0 +1,19 @@
+{
+  "slug": "manetatulyan",
+  "url": "https://manetatulyan.com/",
+  "fetched_at": "2026-07-07T10:42:43.428951+00:00",
+  "status": 200,
+  "final_url": "https://manetatulyan.com/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 109562,
+  "stylesheets": [
+    "https://st-p.rmcdn1.net/5f7ff697/dist/viewer.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://st-p.rmcdn1.net/5f7ff697/dist/viewer.css",
+      "file": "5f7ff697_dist_viewer.css",
+      "bytes": 183976
+    }
+  ]
+}

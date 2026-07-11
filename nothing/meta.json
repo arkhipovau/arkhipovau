@@ -1,0 +1,25 @@
+{
+  "slug": "nothing",
+  "url": "https://nl.nothing.tech/",
+  "fetched_at": "2026-07-07T10:42:46.415161+00:00",
+  "status": 200,
+  "final_url": "https://nl.nothing.tech/",
+  "content_type": "text/html",
+  "bytes": 178974,
+  "stylesheets": [
+    "https://cdn.shopify.com/oxygen-v2/44142/39449/83031/3930552/assets/tailwind-BhkzR89u.css",
+    "https://cdn.shopify.com/oxygen-v2/44142/39449/83031/3930552/assets/app-D6o14BgC.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://cdn.shopify.com/oxygen-v2/44142/39449/83031/3930552/assets/tailwind-BhkzR89u.css",
+      "file": "oxygen-v2_44142_39449_83031_3930552_assets_tailwind-BhkzR89u.css",
+      "bytes": 70196
+    },
+    {
+      "url": "https://cdn.shopify.com/oxygen-v2/44142/39449/83031/3930552/assets/app-D6o14BgC.css",
+      "file": "oxygen-v2_44142_39449_83031_3930552_assets_app-D6o14BgC.css",
+      "bytes": 5455
+    }
+  ]
+}

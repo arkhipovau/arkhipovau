@@ -1,0 +1,25 @@
+{
+  "slug": "1of1studio",
+  "url": "https://1of1studio.com/",
+  "fetched_at": "2026-07-07T10:43:34.047158+00:00",
+  "status": 200,
+  "final_url": "https://1of1studio.com/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 764889,
+  "stylesheets": [
+    "/_next/static/css/eba192f8b399608c.css",
+    "/_next/static/css/3d01ea48ad0769c2.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://1of1studio.com/_next/static/css/eba192f8b399608c.css",
+      "file": "_next_static_css_eba192f8b399608c.css",
+      "bytes": 5299
+    },
+    {
+      "url": "https://1of1studio.com/_next/static/css/3d01ea48ad0769c2.css",
+      "file": "_next_static_css_3d01ea48ad0769c2.css",
+      "bytes": 15508
+    }
+  ]
+}

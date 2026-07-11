@@ -1,0 +1,267 @@
+[
+  {
+    "slug": "manetatulyan",
+    "url": "https://manetatulyan.com/",
+    "fetched_at": "2026-07-07T10:42:43.428951+00:00",
+    "status": 200,
+    "final_url": "https://manetatulyan.com/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 109562,
+    "stylesheets": [
+      "https://st-p.rmcdn1.net/5f7ff697/dist/viewer.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "nothing",
+    "url": "https://nl.nothing.tech/",
+    "fetched_at": "2026-07-07T10:42:46.415161+00:00",
+    "status": 200,
+    "final_url": "https://nl.nothing.tech/",
+    "content_type": "text/html",
+    "bytes": 178974,
+    "stylesheets": [
+      "https://cdn.shopify.com/oxygen-v2/44142/39449/83031/3930552/assets/tailwind-BhkzR89u.css",
+      "https://cdn.shopify.com/oxygen-v2/44142/39449/83031/3930552/assets/app-D6o14BgC.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "bakkenbaeck",
+    "url": "https://bakkenbaeck.com/join",
+    "fetched_at": "2026-07-07T10:42:50.729564+00:00",
+    "status": 200,
+    "final_url": "https://bakkenbaeck.com/join",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 224371,
+    "stylesheets": [
+      "/_next/static/css/2c7ba9b868c5c0cc.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "guglieri",
+    "url": "https://guglieri.com/",
+    "fetched_at": "2026-07-07T10:42:54.601683+00:00",
+    "status": 200,
+    "final_url": "https://guglieri.com/",
+    "content_type": "text/html",
+    "bytes": 242691,
+    "stylesheets": [],
+    "ok": true
+  },
+  {
+    "slug": "artemshcherban",
+    "url": "https://artemshcherban.com/",
+    "fetched_at": "2026-07-07T10:42:59.109238+00:00",
+    "status": 200,
+    "final_url": "https://artemshcherban.com/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 106149,
+    "stylesheets": [
+      "https://cdn.prod.website-files.com/68de8a969aba623df9f325cc/css/artem-shcherban-79f658.webflow.shared.a693feaab.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "area17",
+    "url": "https://area17.com/contact/rejoignez-notre-communaute-de-talents-paris",
+    "fetched_at": "2026-07-07T10:43:01.115718+00:00",
+    "status": 200,
+    "final_url": "https://area17.com/contact/rejoignez-notre-communaute-de-talents-paris",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 86434,
+    "stylesheets": [
+      "https://unpkg.com/filepond/dist/filepond.css",
+      "https://unpkg.com/filepond/dist/filepond.css",
+      "/build/assets/app-DfY6U0Vq.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "fernandoespeso",
+    "url": "https://www.fernandoespeso.info/",
+    "fetched_at": "2026-07-07T10:43:07.557170+00:00",
+    "status": 200,
+    "final_url": "https://www.fernandoespeso.info/",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 40308,
+    "stylesheets": [
+      "https://www.fernandoespeso.info/assets/css/index.css",
+      "https://www.fernandoespeso.info/assets/css/templates/home.css",
+      "https://unpkg.com/swiper/swiper-bundle.min.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "geminiservices",
+    "url": "https://geminiservic.es/",
+    "fetched_at": "2026-07-07T10:43:09.313239+00:00",
+    "status": 200,
+    "final_url": "https://geminiservic.es/",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 35727,
+    "stylesheets": [
+      "https://geminiservic.es/assets/dist/js/main.css?v=1776671706",
+      "https://geminiservic.es/assets/dist/css/style.css?v=1776671706",
+      "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "josehoudini",
+    "url": "https://josehoudini.es/",
+    "fetched_at": "2026-07-07T10:43:11.426644+00:00",
+    "status": 200,
+    "final_url": "https://josehoudini.es/",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 37630,
+    "stylesheets": [
+      "https://josehoudini.es/assets/css/style.css",
+      "https://josehoudini.es/assets/css/style_global.css",
+      "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "naranjoetxeberria",
+    "url": "https://naranjoetxeberria.com/",
+    "fetched_at": "2026-07-07T10:43:13.140793+00:00",
+    "status": 200,
+    "final_url": "https://naranjoetxeberria.com/",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 424290,
+    "stylesheets": [
+      "https://naranjoetxeberria.com/wp-content/themes/ne/assets/css/style.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "noho",
+    "url": "https://noho.es/",
+    "fetched_at": "2026-07-07T10:43:20.196754+00:00",
+    "status": 200,
+    "final_url": "https://noho.es/",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 90156,
+    "stylesheets": [
+      "https://noho.es/core/cache/autoptimize/css/autoptimize_single_4940e4ae72b6124a6eab7e97fc8df1f4.css",
+      "https://noho.es/core/modules/complianz-gdpr/assets/css/cookieblocker.min.css",
+      "https://noho.es/core/cache/autoptimize/css/autoptimize_single_a618fd1c5f821a788be008b1a6727766.css",
+      "https://noho.es/core/cache/autoptimize/css/autoptimize_single_f38b2db10e01b1572732a3191d538707.css",
+      "https://noho.es/core/cache/autoptimize/css/autoptimize_single_1a346710668171d5fa2fdc6407c6e9b2.css",
+      "https://noho.es/lib/blocks/heading/style.min.css",
+      "https://noho.es/core/cache/autoptimize/css/autoptimize_single_8cabfa803e92ebb58f424d58890665bf.css",
+      "https://noho.es/lib/blocks/paragraph/style.min.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "norgram",
+    "url": "https://www.norgram.co/",
+    "fetched_at": "2026-07-07T10:43:24.921439+00:00",
+    "status": 200,
+    "final_url": "https://www.norgram.co/",
+    "content_type": "text/html",
+    "bytes": 60281,
+    "stylesheets": [
+      "./_app/immutable/assets/canvas-logo.u5oeJMHw.css",
+      "./_app/immutable/assets/0.x39Z5BJD.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "bisougallery",
+    "url": "https://www.bisougallery.com/",
+    "fetched_at": "2026-07-07T10:43:29.321733+00:00",
+    "status": 200,
+    "final_url": "https://www.bisougallery.com/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 1349818,
+    "stylesheets": [],
+    "ok": true
+  },
+  {
+    "slug": "1of1studio",
+    "url": "https://1of1studio.com/",
+    "fetched_at": "2026-07-07T10:43:34.047158+00:00",
+    "status": 200,
+    "final_url": "https://1of1studio.com/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 764889,
+    "stylesheets": [
+      "/_next/static/css/eba192f8b399608c.css",
+      "/_next/static/css/3d01ea48ad0769c2.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "mouthwash",
+    "url": "https://mouthwash.studio/",
+    "fetched_at": "2026-07-07T10:43:57.467297+00:00",
+    "status": 200,
+    "final_url": "https://mouthwash.studio/",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 41775,
+    "stylesheets": [
+      "/webfonts/webfonts.css",
+      "/_nuxt/css/f9fb646.css",
+      "/_nuxt/css/653debb.css",
+      "/_nuxt/css/defa288.css",
+      "/_nuxt/css/59aa8e8.css",
+      "/_nuxt/css/f2e51bf.css",
+      "/_nuxt/css/4c3f372.css"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "ransmeier",
+    "url": "http://ransmeier.com/",
+    "fetched_at": "2026-07-07T10:44:01.833327+00:00",
+    "status": 200,
+    "final_url": "http://ransmeier.com/",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 112649,
+    "stylesheets": [],
+    "ok": true
+  },
+  {
+    "slug": "gaadesign",
+    "url": "https://www.gaadesign.studio/",
+    "fetched_at": "2026-07-07T10:44:04.967719+00:00",
+    "status": 200,
+    "final_url": "https://www.gaadesign.studio/",
+    "content_type": "text/html",
+    "bytes": 571182,
+    "stylesheets": [],
+    "ok": true
+  },
+  {
+    "slug": "vanderbrand",
+    "url": "https://vanderbrand.com/",
+    "fetched_at": "2026-07-07T10:44:11.926554+00:00",
+    "status": 200,
+    "final_url": "https://vanderbrand.com/",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 31633,
+    "stylesheets": [
+      "https://vanderbrand.com/wp-content/themes/vanderbrand/assets/css/vb.css?v1.13",
+      "https://vanderbrand.com/wp-content/plugins/simple-tags/assets/frontend/css/frontend.css?ver=3.37.2"
+    ],
+    "ok": true
+  },
+  {
+    "slug": "markyareham",
+    "url": "https://www.markyareham.com/index",
+    "fetched_at": "2026-07-07T10:44:14.576437+00:00",
+    "status": 200,
+    "final_url": "https://www.markyareham.com/index",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 35499,
+    "stylesheets": [
+      "https://www.markyareham.com/assets/css/style.css",
+      "https://unpkg.com/swiper/swiper-bundle.min.css"
+    ],
+    "ok": true
+  }
+]

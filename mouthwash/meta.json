@@ -1,0 +1,45 @@
+{
+  "slug": "mouthwash",
+  "url": "https://mouthwash.studio/",
+  "fetched_at": "2026-07-07T10:43:57.467297+00:00",
+  "status": 200,
+  "final_url": "https://mouthwash.studio/",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 41775,
+  "stylesheets": [
+    "/webfonts/webfonts.css",
+    "/_nuxt/css/f9fb646.css",
+    "/_nuxt/css/653debb.css",
+    "/_nuxt/css/defa288.css",
+    "/_nuxt/css/59aa8e8.css",
+    "/_nuxt/css/f2e51bf.css",
+    "/_nuxt/css/4c3f372.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://mouthwash.studio/webfonts/webfonts.css",
+      "file": "webfonts_webfonts.css",
+      "bytes": 479
+    },
+    {
+      "url": "https://mouthwash.studio/_nuxt/css/f9fb646.css",
+      "file": "_nuxt_css_f9fb646.css",
+      "bytes": 3370
+    },
+    {
+      "url": "https://mouthwash.studio/_nuxt/css/653debb.css",
+      "file": "_nuxt_css_653debb.css",
+      "bytes": 22500
+    },
+    {
+      "url": "https://mouthwash.studio/_nuxt/css/defa288.css",
+      "file": "_nuxt_css_defa288.css",
+      "bytes": 18452
+    },
+    {
+      "url": "https://mouthwash.studio/_nuxt/css/59aa8e8.css",
+      "file": "_nuxt_css_59aa8e8.css",
+      "bytes": 6995
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "norgram",
+  "url": "https://www.norgram.co/",
+  "fetched_at": "2026-07-07T10:43:24.921439+00:00",
+  "status": 200,
+  "final_url": "https://www.norgram.co/",
+  "content_type": "text/html",
+  "bytes": 60281,
+  "stylesheets": [
+    "./_app/immutable/assets/canvas-logo.u5oeJMHw.css",
+    "./_app/immutable/assets/0.x39Z5BJD.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://www.norgram.co/_app/immutable/assets/canvas-logo.u5oeJMHw.css",
+      "file": "_app_immutable_assets_canvas-logo.u5oeJMHw.css",
+      "bytes": 1314
+    },
+    {
+      "url": "https://www.norgram.co/_app/immutable/assets/0.x39Z5BJD.css",
+      "file": "_app_immutable_assets_0.x39Z5BJD.css",
+      "bytes": 21665
+    }
+  ]
+}

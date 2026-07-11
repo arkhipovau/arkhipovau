@@ -1,0 +1,31 @@
+{
+  "slug": "area17",
+  "url": "https://area17.com/contact/rejoignez-notre-communaute-de-talents-paris",
+  "fetched_at": "2026-07-07T10:43:01.115718+00:00",
+  "status": 200,
+  "final_url": "https://area17.com/contact/rejoignez-notre-communaute-de-talents-paris",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 86434,
+  "stylesheets": [
+    "https://unpkg.com/filepond/dist/filepond.css",
+    "https://unpkg.com/filepond/dist/filepond.css",
+    "/build/assets/app-DfY6U0Vq.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://unpkg.com/filepond/dist/filepond.css",
+      "file": "filepond_dist_filepond.css",
+      "bytes": 26774
+    },
+    {
+      "url": "https://unpkg.com/filepond/dist/filepond.css",
+      "file": "filepond_dist_filepond.css",
+      "bytes": 26774
+    },
+    {
+      "url": "https://area17.com/build/assets/app-DfY6U0Vq.css",
+      "file": "build_assets_app-DfY6U0Vq.css",
+      "bytes": 273273
+    }
+  ]
+}

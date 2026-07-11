@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Julie Arkhipova — design at the intersection of research, brand identity, editorial and digital.">
+  <title>Julie Arkhipova</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+  <meta property="og:title" content="Julie Arkhipova">
+  <meta property="og:image" content="assets/images/main/image-70178fa8-67a0-4c08-81f1-825f62827e2c.jpg">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .portfolio {
+      padding-top: 56px;
+      padding-bottom: 80px;
+    }
+
+    .zone-section.is-hidden { display: none; }
+
+    .work-item.is-hidden { display: none; }
+
+    .eco-block.is-hidden { display: none; }
+
+    .zone-section {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: 1 / -1;
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 56px;
+    }
+
+    .zone-section:first-child { border-top: none; padding-top: 0; }
+
+    .work-grid {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: subgrid;
+      row-gap: 40px;
+    }
+
+    .work-item {
+      display: block;
+      grid-column: span 3;
+    }
+
+    .work-item__figure {
+      aspect-ratio: 4 / 5;
+      background: #000000;
+      border-radius: var(--radius);
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .work-item__figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--radius);
+    }
+
+    .work-item__caption {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .work-item__name {
+      display: block;
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      letter-spacing: var(--track-sans);
+    }
+
+    .work-item__line,
+    .work-item__cta {
+      display: block;
+      font-size: var(--fs-meta);
+      line-height: var(--lh-meta);
+      letter-spacing: var(--track-meta);
+    }
+
+    .work-item__cta {
+      display: inline-block;
+      align-self: flex-start;
+      margin-top: 2px;
+      border-bottom: 1px solid currentColor;
+    }
+
+    a.work-item:hover .work-item__cta { border-bottom-color: transparent; }
+
+    .eco-block {
+      grid-column: 1 / 7;
+      margin-top: 24px;
+      border-top: 1px solid var(--line);
+      padding-top: 8px;
+    }
+
+    .eco-block h3 { margin-bottom: 8px; }
+
+    .eco-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: var(--row-pad) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eco-item__figure {
+      aspect-ratio: 1;
+      background: #000;
+      border-radius: var(--radius);
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .eco-item__figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .eco-item__body {
+      min-width: 0;
+    }
+
+    .eco-item__name { display: block; }
+
+    .eco-item__meta {
+      display: block;
+      margin-top: 2px;
+    }
+
+    .bio-panel {
+      grid-column: 1 / 7;
+      margin-top: 32px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .bio-panel .link { margin-top: 8px; }
+
+    @media (max-width: 1024px) {
+      .work-item { grid-column: span 6; }
+      .eco-block,
+      .bio-panel { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 768px) {
+      .portfolio { padding-top: 72px; padding-bottom: 96px; }
+
+      .work-item { grid-column: 1 / -1; }
+
+      .zone-section { padding: 24px 0; }
+    }
+  </style>
+</head>
+<body data-page="work">
+
+  <nav class="tabnav-wrapper" aria-label="Work">
+    <div class="tabnav tabnav-pill tabnav-light-alpha">
+      <div class="tabnav-platter">
+        <div class="tabnav-indicator" aria-hidden="true"></div>
+        <div class="tabnav-mask">
+          <ul class="tabnav-items" role="tablist">
+            <li class="tabnav-item tabnav-item-first tabnav-item-active" role="presentation">
+              <button type="button" class="tabnav-link" role="tab" aria-selected="true" tabindex="0" data-filter="all">
+                <span class="tabnav-label">All</span>
+              </button>
+            </li>
+            <li class="tabnav-item" role="presentation">
+              <button type="button" class="tabnav-link" role="tab" aria-selected="false" tabindex="-1" data-filter="branding">
+                <span class="tabnav-label">Branding</span>
+              </button>
+            </li>
+            <li class="tabnav-item" role="presentation">
+              <button type="button" class="tabnav-link" role="tab" aria-selected="false" tabindex="-1" data-filter="product">
+                <span class="tabnav-label">Product</span>
+              </button>
+            </li>
+            <li class="tabnav-item tabnav-item-last" role="presentation">
+              <button type="button" class="tabnav-link" role="tab" aria-selected="false" tabindex="-1" data-filter="research">
+                <span class="tabnav-label">Research</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="portfolio site-shell" id="portfolio"></main>
+
+  <div class="overlay" id="overlay-about" aria-hidden="true" role="dialog" aria-label="About">
+    <div class="overlay__head">
+      <span class="type-menu">Julie Arkhipova</span>
+      <button type="button" class="link type-menu" data-close>Close</button>
+    </div>
+    <div class="overlay__body">
+      <p class="overlay__label type-menu">About</p>
+      <p id="about-text" class="type-serif"></p>
+      <div class="overlay__actions">
+        <button type="button" class="btn btn--sm" data-copy="arkhipoovau@gmail.com">Copy email</button>
+        <a href="about/" class="btn btn--sm btn--fill">Full page</a>
+        <button type="button" class="btn btn--sm btn--fill" data-open="overlay-contact" data-close-menu>Stay in touch</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay-contact" aria-hidden="true" role="dialog" aria-label="Stay in touch">
+    <div class="overlay__head">
+      <span class="type-menu">Stay in touch</span>
+      <button type="button" class="link type-menu" data-close>Close</button>
+    </div>
+    <div class="overlay__body">
+      <p class="overlay__label type-menu">New work, quietly shared</p>
+      <form id="contact-form">
+        <div class="field">
+          <label for="contact-email">Email address</label>
+          <input type="email" id="contact-email" name="email" autocomplete="email" required>
+        </div>
+        <button type="submit" class="btn btn--sm btn--fill">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="site.js"></script>
+  <script>
+    const bio = `I am on a mission to make long stories short: passionate about speaking visual languages driven by conceptual thinking and curiosity. I believe that design is about courage and cross-platform, so my diverse background is at the intersection of research, product, management, art, code, design and urban planning. The goal is to spread holistic perspectives and a great experience, bring clarity and beauty, always have fun.`;
+
+    document.getElementById('about-text').textContent = bio;
+
+    const zones = ['branding', 'product', 'research'];
+
+    const projects = [
+      { zone: 'identity', discipline: 'branding', title: 'RUN–OPS', tags: 'Brand Identity', line: 'Operational brand for a running culture.', uri: 'run-ops' },
+      { zone: 'identity', discipline: 'branding', title: 'TokensFarm', tags: 'Brand Identity', line: 'Clarity in a crowded DeFi landscape.', uri: 'tokensfarm' },
+      { zone: 'identity', discipline: 'branding', title: 'Burger Records', tags: 'Brand Identity', line: 'Sound, nostalgia and burgers in one system.', uri: 'burger-records' },
+      { zone: 'identity', discipline: 'branding', title: 'Geoprotech', tags: 'Brand Identity', line: 'Identity for geotechnical engineering.', uri: 'geoprotech' },
+      { zone: 'identity', discipline: 'branding', title: 'White Secret Mouthfreshers', tags: 'Packaging', line: 'Packaging for oral care.', uri: 'white-secret-mouthfresher' },
+      { zone: 'identity', discipline: 'branding', title: 'ARTDOM', tags: 'Logotype', uri: 'artdom' },
+      { zone: 'identity', discipline: 'branding', title: 'Magic Mirror', tags: 'Brand Identity', uri: 'magic-mirror' },
+      { zone: 'identity', discipline: 'branding', title: 'Chichilaki', tags: 'Brand Identity', line: 'Georgian craft in a contemporary system.' },
+      { zone: 'sites', discipline: 'product', title: 'Moretime Expeditions', tags: 'Web Design', line: 'Digital home for expedition culture.', uri: 'moretime' },
+      { zone: 'sites', discipline: 'product', title: 'Crim', tags: 'Brand Platform and Web Development', line: 'Platform for a creative community.' },
+      { zone: 'sites', discipline: 'product', title: 'Veter Magazine', tags: 'Full Stack Design', line: 'Editorial product from concept to ship.' },
+      { zone: 'sites', discipline: 'product', title: 'Blanc', tags: 'UX/UI Design', line: 'Interface for a fintech product.' },
+      { zone: 'sites', discipline: 'product', title: 'Rhythmic', tags: 'Product & Landing Design', line: 'Landing for a music-tech startup.' },
+      { zone: 'sites', discipline: 'product', title: 'Steford Accelerator', tags: 'Landing Pages', line: 'Campaign pages for an accelerator.' },
+      { zone: 'grains', discipline: 'research', title: 'Illustrations Pack', tags: 'Illustration', line: 'Personal illustration series.', uri: 'illustrations-pack' },
+      { zone: 'grains', discipline: 'research', title: 'Fields&Boxes', tags: 'Pet Project', line: 'Side project on urban form.', eco: true },
+      { zone: 'grains', discipline: 'research', title: 'Perception of Beauty', tags: 'Research', line: 'Essay on Olafur Eliasson installations.', uri: 'perception-of-beauty-in-the-installations-of-olafur-eliasson', eco: true },
+      { zone: 'grains', discipline: 'research', title: 'Eyes of the Middle Ages', tags: 'Research', line: 'Spiritual dynamics in medieval sculpture.', uri: 'the-eyes-of-the-middle-ages-expressing-spiritual-dynamics-in-sculpture', eco: true },
+      { zone: 'grains', discipline: 'research', title: 'Playground', tags: 'Experiments', line: 'Open lab for personal work.', uri: 'playground', eco: true },
+    ];
+
+    const main = document.getElementById('portfolio');
+    const menuRoot = document.querySelector('.tabnav');
+    const menuPlatter = document.querySelector('.tabnav-platter');
+    const menuItems = document.querySelectorAll('.tabnav-item');
+    const menuBtns = document.querySelectorAll('.tabnav-link');
+
+    function moveMenuIndicator() {
+      const activeItem = document.querySelector('.tabnav-item-active');
+      const activeLink = activeItem?.querySelector('.tabnav-link');
+      if (!activeLink || !menuRoot) return;
+      const rootRect = menuPlatter.getBoundingClientRect();
+      const linkRect = activeLink.getBoundingClientRect();
+      menuRoot.style.setProperty('--tabnav-indicator-start', `${linkRect.left - rootRect.left}px`);
+      menuRoot.style.setProperty('--tabnav-indicator-width', `${linkRect.width}px`);
+    }
+
+    function scheduleIndicator() {
+      requestAnimationFrame(() => requestAnimationFrame(moveMenuIndicator));
+    }
+
+    function setActiveItem(activeBtn) {
+      menuItems.forEach(item => {
+        const link = item.querySelector('.tabnav-link');
+        const on = link === activeBtn;
+        item.classList.toggle('tabnav-item-active', on);
+        link.setAttribute('aria-selected', on ? 'true' : 'false');
+        link.tabIndex = on ? 0 : -1;
+      });
+    }
+
+    function thumbFor(p, manifest, cardHeroes) {
+      if (p.img) return p.img;
+      for (const key of [p.uri, p.title].filter(Boolean)) {
+        if (cardHeroes[key]) return cardHeroes[key];
+      }
+      if (p.uri && manifest[p.uri]?.images?.[0]) return manifest[p.uri].images[0];
+      return '';
+    }
+
+    function workItem(p, manifest, cardHeroes) {
+      const href = p.uri ? `/${p.uri}/` : '';
+      const src = thumbFor(p, manifest, cardHeroes);
+      const img = src ? `<img src="${src}" alt="" loading="lazy">` : '';
+      const inner = `
+        <div class="work-item__figure">${img}</div>
+        <div class="work-item__caption">
+          <span class="work-item__name">${p.title}</span>
+          <span class="work-item__line">${p.line || p.tags}</span>
+          <span class="work-item__cta">${href ? 'Discover' : 'Soon'}</span>
+        </div>
+      `;
+      const el = document.createElement(href ? 'a' : 'div');
+      el.className = 'work-item';
+      el.dataset.discipline = p.discipline;
+      if (href) el.href = href;
+      el.innerHTML = inner;
+      return el;
+    }
+
+    function ecoBlock(items, discipline, manifest, cardHeroes) {
+      const block = document.createElement('div');
+      block.className = 'eco-block';
+      block.dataset.discipline = discipline;
+      block.innerHTML = '<h3 class="type-menu">Ecosystem</h3>';
+      items.forEach(p => {
+        const href = p.uri ? `/${p.uri}/` : '';
+        const src = thumbFor(p, manifest, cardHeroes);
+        const thumb = src ? `<div class="eco-item__figure"><img src="${src}" alt="" loading="lazy"></div>` : '';
+        const el = document.createElement(href ? 'a' : 'div');
+        el.className = 'eco-item';
+        if (href) el.href = href;
+        el.innerHTML = `
+          ${thumb}
+          <div class="eco-item__body">
+            <span class="eco-item__name type-serif">${p.title}</span>
+            <span class="eco-item__meta type-meta">${p.tags}</span>
+          </div>
+        `;
+        block.appendChild(el);
+      });
+      return block;
+    }
+
+    function bioPanel() {
+      const el = document.createElement('div');
+      el.className = 'bio-panel';
+      el.innerHTML = `
+        <p class="type-serif">${bio}</p>
+        <button type="button" class="type-menu link" data-open="overlay-about">About</button>
+      `;
+      return el;
+    }
+
+    async function initPortfolio() {
+      let manifest = {};
+      let cardHeroes = {};
+      try {
+        const [manifestRes, heroesRes] = await Promise.all([
+          fetch('assets/images/manifest.json'),
+          fetch('assets/images/card-heroes.json'),
+        ]);
+        if (manifestRes.ok) manifest = await manifestRes.json();
+        if (heroesRes.ok) cardHeroes = await heroesRes.json();
+      } catch (_) {}
+
+      zones.forEach(zoneId => {
+        const section = document.createElement('section');
+        section.className = 'zone-section site-shell__full';
+        section.id = zoneId;
+        section.dataset.zone = zoneId;
+
+        const grid = document.createElement('div');
+        grid.className = 'work-grid';
+
+        const zoneProjects = projects.filter(p => p.discipline === zoneId);
+        const ecoProjects = zoneProjects.filter(p => p.eco);
+        const workProjects = zoneProjects.filter(p => !p.eco);
+
+        workProjects.forEach(p => grid.appendChild(workItem(p, manifest, cardHeroes)));
+        section.appendChild(grid);
+
+        if (ecoProjects.length) section.appendChild(ecoBlock(ecoProjects, zoneId, manifest, cardHeroes));
+        if (zoneId === 'branding') section.appendChild(bioPanel());
+
+        main.appendChild(section);
+      });
+    }
+
+    initPortfolio();
+
+    function applyFilter(filter) {
+      main.classList.add('is-filtering');
+
+      window.setTimeout(() => {
+        const activeBtn = [...menuBtns].find(btn => btn.dataset.filter === filter);
+        if (activeBtn) setActiveItem(activeBtn);
+
+        main.querySelectorAll('.work-item, .eco-block').forEach(el => {
+          const match = filter === 'all' || el.dataset.discipline === filter;
+          el.classList.toggle('is-hidden', !match);
+        });
+
+        main.querySelectorAll('.zone-section').forEach(section => {
+          const hasVisible = section.querySelector('.work-item:not(.is-hidden), .eco-block:not(.is-hidden), .bio-panel');
+          const zoneMatch = filter === 'all' || section.dataset.zone === filter;
+          section.classList.toggle('is-hidden', !zoneMatch || !hasVisible);
+        });
+
+        if (filter !== 'all') {
+          const target = main.querySelector(`.zone-section[data-zone="${filter}"]`);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        scheduleIndicator();
+        main.classList.remove('is-filtering');
+      }, 140);
+    }
+
+    window.scrollToZone = id => applyFilter(id);
+
+    menuBtns.forEach(btn => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+    });
+
+    window.addEventListener('resize', scheduleIndicator);
+    if (document.fonts?.ready) document.fonts.ready.then(scheduleIndicator);
+    if (menuPlatter && window.ResizeObserver) {
+      new ResizeObserver(scheduleIndicator).observe(menuPlatter);
+    }
+    scheduleIndicator();
+    window.addEventListener('load', scheduleIndicator);
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* Suisse Intl — local copies from ~/Library/Fonts */
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('fonts/SuisseIntl-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('fonts/SuisseIntl-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('fonts/SuisseIntl-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('fonts/SuisseIntl-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "maison",
+  "url": "https://www.maisonmargiela.com/en-us/",
+  "note": "Curated reference: preview.html + tokens/styles/fonts. source.html = browser paste.",
+  "files": {
+    "source.html": "Full browser HTML paste",
+    "preview.html": "Stripped clean reference with our font stack",
+    "tokens.css": "Typography tokens mapped to Suisse Intl + Georgia",
+    "styles.css": "Reusable UI patterns",
+    "fonts.css": "Suisse Intl @font-face",
+    "fonts/": "Suisse Intl OTF files",
+    "reference/": "Original Margiela font CSS"
+  },
+  "restored_at": "2026-07-07T10:49:57.528655+00:00"
+}

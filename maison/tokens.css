@@ -1,0 +1,37 @@
+/* Extracted from maisonmargiela.com global.css — mapped to our stack */
+
+:root {
+  /* Original → Ours */
+  /* Margiela Sans → Suisse Intl */
+  /* Margiela Serif → Georgia */
+
+  --mm-font-sans: 'Suisse Intl', 'Helvetica Neue', Arial, sans-serif;
+  --mm-font-serif: Georgia, 'Times New Roman', Times, serif;
+
+  --mm-body-font-family: var(--mm-font-sans);
+  --mm-body-font-size: 1rem;
+  --mm-body-font-weight: 400;
+  --mm-body-line-height: 1.5;
+
+  --mm-ink: #000000;
+  --mm-paper: #ffffff;
+
+  /* Product card title — mm-product-card__title */
+  --mm-card-title-size: 16px;
+  --mm-card-title-lh: 1.375;
+  --mm-card-title-tracking: -0.15px;
+
+  /* Margiela scale — menu · body · meta */
+  --fs-menu: 14px;
+  --lh-menu: 20px;
+  --fs-meta: 13px;
+  --lh-meta: 18px;
+  --mm-menu-size: 14px;
+  --mm-menu-lh: 20px;
+  --mm-menu-weight: 400;
+
+  /* Editorial title — type-mm-title-1 */
+  --mm-title-serif-size: 40px;
+  --mm-title-serif-lh: 1.1;
+  --mm-title-serif-tracking: -0.25px;
+}

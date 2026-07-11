@@ -1,0 +1,46 @@
+{
+  "slug": "noho",
+  "url": "https://noho.es/",
+  "fetched_at": "2026-07-07T10:43:20.196754+00:00",
+  "status": 200,
+  "final_url": "https://noho.es/",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 90156,
+  "stylesheets": [
+    "https://noho.es/core/cache/autoptimize/css/autoptimize_single_4940e4ae72b6124a6eab7e97fc8df1f4.css",
+    "https://noho.es/core/modules/complianz-gdpr/assets/css/cookieblocker.min.css",
+    "https://noho.es/core/cache/autoptimize/css/autoptimize_single_a618fd1c5f821a788be008b1a6727766.css",
+    "https://noho.es/core/cache/autoptimize/css/autoptimize_single_f38b2db10e01b1572732a3191d538707.css",
+    "https://noho.es/core/cache/autoptimize/css/autoptimize_single_1a346710668171d5fa2fdc6407c6e9b2.css",
+    "https://noho.es/lib/blocks/heading/style.min.css",
+    "https://noho.es/core/cache/autoptimize/css/autoptimize_single_8cabfa803e92ebb58f424d58890665bf.css",
+    "https://noho.es/lib/blocks/paragraph/style.min.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://noho.es/core/cache/autoptimize/css/autoptimize_single_4940e4ae72b6124a6eab7e97fc8df1f4.css",
+      "file": "re_cache_autoptimize_css_autoptimize_single_4940e4ae72b6124a6eab7e97fc8df1f4.css",
+      "bytes": 58839
+    },
+    {
+      "url": "https://noho.es/core/modules/complianz-gdpr/assets/css/cookieblocker.min.css",
+      "file": "core_modules_complianz-gdpr_assets_css_cookieblocker.min.css",
+      "bytes": 2853
+    },
+    {
+      "url": "https://noho.es/core/cache/autoptimize/css/autoptimize_single_a618fd1c5f821a788be008b1a6727766.css",
+      "file": "re_cache_autoptimize_css_autoptimize_single_a618fd1c5f821a788be008b1a6727766.css",
+      "bytes": 8534
+    },
+    {
+      "url": "https://noho.es/core/cache/autoptimize/css/autoptimize_single_f38b2db10e01b1572732a3191d538707.css",
+      "file": "re_cache_autoptimize_css_autoptimize_single_f38b2db10e01b1572732a3191d538707.css",
+      "bytes": 1330
+    },
+    {
+      "url": "https://noho.es/core/cache/autoptimize/css/autoptimize_single_1a346710668171d5fa2fdc6407c6e9b2.css",
+      "file": "re_cache_autoptimize_css_autoptimize_single_1a346710668171d5fa2fdc6407c6e9b2.css",
+      "bytes": 32169
+    }
+  ]
+}

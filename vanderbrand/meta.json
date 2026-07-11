@@ -1,0 +1,25 @@
+{
+  "slug": "vanderbrand",
+  "url": "https://vanderbrand.com/",
+  "fetched_at": "2026-07-07T10:44:11.926554+00:00",
+  "status": 200,
+  "final_url": "https://vanderbrand.com/",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 31633,
+  "stylesheets": [
+    "https://vanderbrand.com/wp-content/themes/vanderbrand/assets/css/vb.css?v1.13",
+    "https://vanderbrand.com/wp-content/plugins/simple-tags/assets/frontend/css/frontend.css?ver=3.37.2"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://vanderbrand.com/wp-content/themes/vanderbrand/assets/css/vb.css?v1.13",
+      "file": "wp-content_themes_vanderbrand_assets_css_vb.css",
+      "bytes": 59933
+    },
+    {
+      "url": "https://vanderbrand.com/wp-content/plugins/simple-tags/assets/frontend/css/frontend.css?ver=3.37.2",
+      "file": "wp-content_plugins_simple-tags_assets_frontend_css_frontend.css",
+      "bytes": 2909
+    }
+  ]
+}

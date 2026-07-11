@@ -1,0 +1,31 @@
+{
+  "slug": "fernandoespeso",
+  "url": "https://www.fernandoespeso.info/",
+  "fetched_at": "2026-07-07T10:43:07.557170+00:00",
+  "status": 200,
+  "final_url": "https://www.fernandoespeso.info/",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 40308,
+  "stylesheets": [
+    "https://www.fernandoespeso.info/assets/css/index.css",
+    "https://www.fernandoespeso.info/assets/css/templates/home.css",
+    "https://unpkg.com/swiper/swiper-bundle.min.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://www.fernandoespeso.info/assets/css/index.css",
+      "file": "assets_css_index.css",
+      "bytes": 6035
+    },
+    {
+      "url": "https://www.fernandoespeso.info/assets/css/templates/home.css",
+      "file": "assets_css_templates_home.css",
+      "bytes": 1183
+    },
+    {
+      "url": "https://unpkg.com/swiper/swiper-bundle.min.css",
+      "file": "swiper_swiper-bundle.min.css",
+      "bytes": 14610
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Margiela — clean reference</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .mm-menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px;
+      border-bottom: 1px solid #000;
+    }
+    .mm-menu__primary {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      padding: 8px;
+    }
+    .mm-product-card__hero {
+      aspect-ratio: 4 / 5;
+      background: #000;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .mm-product-card__hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mm-product-card__info { margin-top: 6px; }
+  </style>
+</head>
+<body class="mm-body">
+  <p class="ref-note">Clean structural reference — class names from Margiela, fonts mapped to Suisse Intl + Georgia.</p>
+
+  <header class="mm-menu">
+    <nav class="mm-menu__primary" aria-label="Primary">
+      <button class="mm-menu-item" type="button">Menu</button>
+      <a class="mm-menu-item mm-link" href="#">Women</a>
+      <a class="mm-menu-item mm-link" href="#">Men</a>
+      <a class="mm-menu-item mm-link" href="#">Fragrances</a>
+    </nav>
+    <a class="mm-menu-item" href="#">Maison Margiela</a>
+    <nav class="mm-menu__primary" aria-label="Utility">
+      <a class="mm-menu-item mm-link" href="#">Search</a>
+      <a class="mm-menu-item mm-link" href="#">Account</a>
+      <a class="mm-menu-item mm-link" href="#">Bag</a>
+    </nav>
+  </header>
+
+  <section class="ref-grid">
+    <article class="mm-product-card">
+      <div class="mm-product-card__hero">
+        <img src="https://www.maisonmargiela.com/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw8e8e8e8e/images/large/MaisonMargiela-SS26-Lookbook-01.jpg" alt="">
+      </div>
+      <div class="mm-product-card__info">
+        <a class="mm-product-card__title" href="#">Anatomic numeric slingback</a>
+        <p class="type-meta">Discover</p>
+      </div>
+    </article>
+  </section>
+
+  <section style="padding: 8px; border-top: 1px solid #000; margin-top: 24px;">
+    <h2 class="type-mm-title-1">Artisanal</h2>
+    <p>Editorial serif headline pattern from Margiela.</p>
+    <a class="mm-link" href="#">Discover the collection</a>
+  </section>
+</body>
+</html>

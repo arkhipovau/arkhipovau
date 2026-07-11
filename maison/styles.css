@@ -1,0 +1,68 @@
+/* Reference patterns from Maison Margiela — for adaptation on main site */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body.mm-body {
+  margin: 0;
+  font-family: var(--mm-body-font-family);
+  font-size: var(--mm-body-font-size);
+  font-weight: var(--mm-body-font-weight);
+  line-height: var(--mm-body-line-height);
+  color: var(--mm-ink);
+  background: var(--mm-paper);
+}
+
+.ref-note {
+  margin: 8px;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.1px;
+}
+
+/* Underline link — Margiela default CTA */
+.mm-link {
+  display: inline-block;
+  width: fit-content;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mm-link:hover { border-bottom-color: transparent; }
+
+/* Product card title */
+.mm-product-card__title {
+  font-family: var(--mm-font-sans);
+  font-size: var(--mm-card-title-size);
+  line-height: var(--mm-card-title-lh);
+  letter-spacing: var(--mm-card-title-tracking);
+  font-weight: 400;
+  color: var(--mm-ink);
+  text-decoration: none;
+}
+
+/* Editorial serif headline */
+.type-mm-title-1 {
+  font-family: var(--mm-font-serif);
+  font-size: var(--mm-title-serif-size);
+  line-height: var(--mm-title-serif-lh);
+  letter-spacing: var(--mm-title-serif-tracking);
+  font-weight: 400;
+}
+
+/* Nav / menu */
+.mm-menu-item {
+  font-family: inherit;
+  font-size: var(--mm-menu-size);
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}

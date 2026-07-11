@@ -1,0 +1,7 @@
+.DS_Store
+.cursor/
+.claude/
+__pycache__/
+*.pyc
+.Python
+*.log

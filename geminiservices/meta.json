@@ -1,0 +1,31 @@
+{
+  "slug": "geminiservices",
+  "url": "https://geminiservic.es/",
+  "fetched_at": "2026-07-07T10:43:09.313239+00:00",
+  "status": 200,
+  "final_url": "https://geminiservic.es/",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 35727,
+  "stylesheets": [
+    "https://geminiservic.es/assets/dist/js/main.css?v=1776671706",
+    "https://geminiservic.es/assets/dist/css/style.css?v=1776671706",
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://geminiservic.es/assets/dist/js/main.css?v=1776671706",
+      "file": "assets_dist_js_main.css",
+      "bytes": 10574
+    },
+    {
+      "url": "https://geminiservic.es/assets/dist/css/style.css?v=1776671706",
+      "file": "assets_dist_css_style.css",
+      "bytes": 10552
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css",
+      "file": "npm_bootstrap-icons_1.11.3_font_bootstrap-icons.min.css",
+      "bytes": 85875
+    }
+  ]
+}

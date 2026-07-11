@@ -1,0 +1,64 @@
+/* Source: maisonmargiela.com — Margiela Sans (reference only) */
+
+@font-face {
+  font-family: 'Margiela Sans';
+  font-style: normal;
+  font-weight: 375;
+  font-display: block;
+  src: url('woff2/MargielaSans-Text.woff2') format('woff2'),
+       url('woff/MargielaSans-Text.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Margiela Sans';
+  font-style: italic;
+  font-weight: 375;
+  font-display: block;
+  src: url('woff2/MargielaSans-TextItalic.woff2') format('woff2'),
+       url('woff/MargielaSans-TextItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Margiela Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('woff2/MargielaSans-Regular.woff2') format('woff2'),
+       url('woff/MargielaSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Margiela Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+  src: url('woff2/MargielaSans-Italic.woff2') format('woff2'),
+       url('woff/MargielaSans-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Margiela Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url('woff2/MargielaSans-Medium.woff2') format('woff2'),
+       url('woff/MargielaSans-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Margiela Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url('woff2/MargielaSans-SemiBold.woff2') format('woff2'),
+       url('woff/MargielaSans-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Margiela Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url('woff2/MargielaSans-Bold.woff2') format('woff2'),
+       url('woff/MargielaSans-Bold.woff') format('woff');
+}

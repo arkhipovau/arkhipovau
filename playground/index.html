@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Julie Arkhipova — Playground">
+  <title>Playground — Julie Arkhipova</title>
+  <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body data-page="playground">
+
+  <main class="page-main page-main--playground">
+    <section class="product-viewer" aria-label="Playground">
+      <div class="product-viewer__component" tabindex="0" role="region" aria-label="Playground experiments">
+        <div class="product-viewer__container">
+          <div class="product-viewer__gallery" id="pg-gallery"></div>
+        </div>
+
+        <div class="all-access-pass all-access-pass--product-viewer">
+          <div class="controls">
+            <div class="control-nav">
+              <button type="button" class="control-nav__btn" data-nav="prev" aria-label="Previous experiment">
+                <svg width="20" height="20" viewBox="0 0 36 36" aria-hidden="true"><path fill="currentColor" d="m18 12.7197c.3838 0 .7676.1465 1.0605.4395l5.5 5.5c.5859.5854.5859 1.5356 0 2.1211l-5.5 5.5c-.5859.5859-1.5352.5859-2.1211 0-.5859-.5854-.5859-1.5356 0-2.1211l-4.4395-4.4395-4.4395 4.4395c-.5859.5854-1.5352.5854-2.1211 0-.5859-.5859-.5859-1.5352 0-2.1211l5.5-5.5c.2929-.293.6767-.4395 1.0605-.4395z"/></svg>
+              </button>
+              <button type="button" class="control-nav__btn" data-nav="next" aria-label="Next experiment">
+                <svg width="20" height="20" viewBox="0 0 36 36" aria-hidden="true"><path fill="currentColor" d="m18 23.2803c-.3838 0-.7676-.1465-1.0605-.4395l-5.5-5.5c-.5859-.5854-.5859-1.5356 0-2.1211l5.5-5.5c.5859-.5859 1.5352-.5859 2.1211 0 .5859.5854.5859 1.5356 0 2.1211l-4.4395 4.4395 4.4395-4.4395c.5859-.5854 1.5352-.5854 2.1211 0 .5859.5859.5859 1.5352 0 2.1211l-5.5 5.5c-.2929.293-.6767.4395-1.0605.4395z"/></svg>
+              </button>
+            </div>
+
+            <div class="control-group-wrap">
+              <span class="control-item__bg" aria-hidden="true"></span>
+              <ul class="control-group" id="pg-controls" role="tablist" aria-label="Experiments"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <script src="../site.js"></script>
+  <script>
+    const imgBase = '../assets/images/playground/';
+    const items = [
+      { title: 'Neck and Neck', year: '2022', img: imgBase + 'image-750382ba-4f72-4cbc-a636-39b435f910d3.jpg', note: 'A first study in rhythm and restraint — two forms chasing the same line.' },
+      { title: 'Solaris', year: '2022', img: imgBase + 'image-a7554c07-5236-47ab-a34f-21073f174a37.jpg', note: 'Warm light, slow orbit. An early sketch in color temperature and scale.' },
+      { title: 'Monsters are dancing under my bed', year: '2023', img: imgBase + 'image-bb892fa7-5c9f-4c26-adb1-08532bc0749c.png', note: 'Night-light typography — fear rendered as pattern, not noise.' },
+      { title: 'Alive', year: '2023', img: imgBase + 'image-5e548682-3573-4733-8ff0-faa77c6f841e.png', note: 'Movement caught between frames — a still image pretending to breathe.' },
+      { title: 'Paper + Light', year: '2023', img: imgBase + 'image-4fc06a04-de61-4a66-a65a-46d469c9b6ae.png', note: 'Fold, cut, illuminate. Material tests with nothing to prove.' },
+      { title: 'Iron + Cloud', year: '2023', img: imgBase + 'image-f9fde34e-bd84-4a5b-837c-989eae186261.png', note: 'Heavy metal, soft atmosphere — weight and vapor in one composition.' },
+      { title: '08.12.1980', year: '2023', img: imgBase + 'image-732268ce-344f-4429-8d0c-df9a5ab5cce3.png', note: 'A date as motif. Memorial geometry in sans and silence.' },
+      { title: 'Element 01', year: '2023', img: imgBase + 'image-59c8446f-7165-478e-95f3-18b5ad998e43.png', note: 'First in a series of elemental studies — circle, edge, void.' },
+      { title: 'Element 02', year: '2023', img: imgBase + 'image-12cdb2bf-db36-471a-9103-a57292ea5c0d.png', note: 'Second element — repetition with one variable changed.' },
+      { title: 'Element 04', year: '2023', img: imgBase + 'image-7978df14-8665-46d1-9652-7b8417cfc01e.png', note: 'Out of sequence on purpose. Disorder as a design constraint.' },
+      { title: 'Element 03', year: '2023', img: imgBase + 'image-1c9e7820-78f9-4697-91fc-14c009f7422b.png', note: 'Return to order. The missing number found in negative space.' },
+      { title: 'To my future pet', year: '2024', img: imgBase + 'image-3fca5480-d225-4123-99a1-2529dcdce69d.png', note: 'Tender, absurd, domestic — a letter to something that does not exist yet.' },
+      { title: 'On my way', year: '2024', img: imgBase + 'image-320bf061-dfc4-4e91-b9cd-d5920b289962.png', note: 'Transit as form — arrows, corridors, and the space between departures.' },
+    ];
+
+    const gallery = document.getElementById('pg-gallery');
+    const controls = document.getElementById('pg-controls');
+    const component = document.querySelector('.product-viewer__component');
+    const bg = component.querySelector('.control-item__bg');
+    let activeIndex = 0;
+
+    const plusSvg = `<svg class="control-item__plus" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11.3" fill="none" stroke="currentColor" stroke-width="0.8"/><path fill="currentColor" d="M12 7v10M7 12h10"/></svg>`;
+
+    function mediaHtml(item, i) {
+      return `
+        <div class="product-viewer__media product-viewer__media--photo${i === 0 ? ' is-active' : ''}" data-index="${i}">
+          <img src="${item.img}" alt="${item.title}" class="product-viewer__media-image" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">
+        </div>
+      `;
+    }
+
+    function controlHtml(item, i) {
+      return `
+        <li class="control-item${i === 0 ? ' is-active' : ''}" data-index="${i}">
+          <button type="button" class="control-item__open" role="tab"
+            id="pg-control-${i}"
+            aria-selected="${i === 0 ? 'true' : 'false'}"
+            aria-controls="pg-panel-${i}"
+            tabindex="${i === 0 ? '0' : '-1'}">
+            <span class="control-item__icon" aria-hidden="true">${plusSvg}<span class="control-item__dot"></span></span>
+            <span class="control-item__label">${item.title}</span>
+          </button>
+          <div class="control-item__content" id="pg-panel-${i}" role="tabpanel" aria-labelledby="pg-control-${i}"${i === 0 ? '' : ' hidden'}>
+            <div class="control-item__content-inner">
+              <p class="control-item__body"><strong class="control-item__title">${item.title}.</strong> ${item.note}</p>
+              <p class="control-item__meta type-meta">${item.year}</p>
+            </div>
+          </div>
+        </li>
+      `;
+    }
+
+    gallery.innerHTML = items.map(mediaHtml).join('');
+    controls.insertAdjacentHTML('beforeend', items.map(controlHtml).join(''));
+
+    function mediaLayers() {
+      return [...gallery.querySelectorAll('.product-viewer__media')];
+    }
+
+    function controlItems() {
+      return [...controls.querySelectorAll('.control-item')];
+    }
+
+    function moveIndicator() {
+      const active = controls.querySelector('.control-item.is-active');
+      const btn = active?.querySelector('.control-item__open');
+      const wrap = controls.closest('.control-group-wrap');
+      if (!bg || !btn || !wrap) return;
+      const wrapRect = wrap.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+      bg.style.width = `${btnRect.width}px`;
+      bg.style.height = `${btnRect.height}px`;
+      bg.style.transform = `translate(${btnRect.left - wrapRect.left}px, ${btnRect.top - wrapRect.top}px)`;
+    }
+
+    function scrollActiveControl() {
+      const active = controls.querySelector('.control-item.is-active');
+      const btn = active?.querySelector('.control-item__open');
+      const wrap = controls.closest('.control-group-wrap');
+      if (!btn || !wrap) return;
+
+      const wrapRect = wrap.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+
+      if (btnRect.top < wrapRect.top) {
+        wrap.scrollTop -= wrapRect.top - btnRect.top + 8;
+      } else if (btnRect.bottom > wrapRect.bottom) {
+        wrap.scrollTop += btnRect.bottom - wrapRect.bottom + 8;
+      }
+    }
+
+    function setActive(index, { scrollControl = false } = {}) {
+      activeIndex = (index + items.length) % items.length;
+
+      mediaLayers().forEach((layer, i) => {
+        layer.classList.toggle('is-active', i === activeIndex);
+      });
+
+      controlItems().forEach((item, i) => {
+        const on = i === activeIndex;
+        item.classList.toggle('is-active', on);
+        const btn = item.querySelector('.control-item__open');
+        const panel = item.querySelector('.control-item__content');
+        btn.setAttribute('aria-selected', on ? 'true' : 'false');
+        btn.tabIndex = on ? 0 : -1;
+        if (on) {
+          panel.removeAttribute('hidden');
+        } else {
+          panel.setAttribute('hidden', '');
+        }
+      });
+
+      requestAnimationFrame(() => {
+        moveIndicator();
+        if (scrollControl) scrollActiveControl();
+      });
+    }
+
+    controls.addEventListener('click', e => {
+      const btn = e.target.closest('.control-item__open');
+      if (!btn) return;
+      setActive(Number(btn.closest('.control-item').dataset.index), { scrollControl: true });
+    });
+
+    component.querySelectorAll('[data-nav]').forEach(navBtn => {
+      navBtn.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        const dir = navBtn.dataset.nav === 'next' ? 1 : -1;
+        setActive(activeIndex + dir, { scrollControl: true });
+      });
+    });
+
+    component.addEventListener('keydown', e => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        setActive(activeIndex + 1, { scrollControl: true });
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setActive(activeIndex - 1, { scrollControl: true });
+      }
+    });
+
+    setActive(0, { scrollControl: false });
+    const wrap = controls.closest('.control-group-wrap');
+    window.addEventListener('resize', moveIndicator);
+    wrap?.addEventListener('scroll', moveIndicator, { passive: true });
+    if (document.fonts?.ready) document.fonts.ready.then(moveIndicator);
+  </script>
+</body>
+</html>

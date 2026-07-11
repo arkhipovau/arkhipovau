@@ -1,0 +1,19 @@
+{
+  "slug": "artemshcherban",
+  "url": "https://artemshcherban.com/",
+  "fetched_at": "2026-07-07T10:42:59.109238+00:00",
+  "status": 200,
+  "final_url": "https://artemshcherban.com/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 106149,
+  "stylesheets": [
+    "https://cdn.prod.website-files.com/68de8a969aba623df9f325cc/css/artem-shcherban-79f658.webflow.shared.a693feaab.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://cdn.prod.website-files.com/68de8a969aba623df9f325cc/css/artem-shcherban-79f658.webflow.shared.a693feaab.css",
+      "file": "68de8a969aba623df9f325cc_css_artem-shcherban-79f658.webflow.shared.a693feaab.css",
+      "bytes": 166933
+    }
+  ]
+}

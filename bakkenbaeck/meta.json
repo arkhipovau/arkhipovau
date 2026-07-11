@@ -1,0 +1,19 @@
+{
+  "slug": "bakkenbaeck",
+  "url": "https://bakkenbaeck.com/join",
+  "fetched_at": "2026-07-07T10:42:50.729564+00:00",
+  "status": 200,
+  "final_url": "https://bakkenbaeck.com/join",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 224371,
+  "stylesheets": [
+    "/_next/static/css/2c7ba9b868c5c0cc.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://bakkenbaeck.com/_next/static/css/2c7ba9b868c5c0cc.css",
+      "file": "_next_static_css_2c7ba9b868c5c0cc.css",
+      "bytes": 44042
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Suisse BP Intl';
+  font-weight: normal;
+  font-display: swap;
+  src: url('/webfonts/SuisseBPIntl-Antique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Suisse BP Intl';
+  font-weight: 300;
+  font-display: swap;
+  src: url('/webfonts/SuisseBPIntl-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Suisse Works';
+  font-weight: normal;
+  font-display: swap;
+  src: url('/webfonts/SuisseWorks-Regular.woff2') format('woff2');
+}

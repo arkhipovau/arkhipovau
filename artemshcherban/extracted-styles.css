@@ -1,0 +1,141 @@
+/* Use a class on the html tag to hide everything */
+.content-loading body {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* --- chunk --- */
+
+::selection {
+  color: white;
+  background-color: black;
+}
+
+:root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------------------- Scaling System by Osmo [https://osmo.supply/] -------------------------  */
+
+/* Desktop */
+:root {
+  --size-unit: 10; /* body font-size in design - no px */
+  --size-container-ideal: 1920; /* screen-size in design - no px */
+  --size-container-min: 992px;
+  --size-container-max: 1920px;
+  --size-container: clamp(var(--size-container-min), 100vw, var(--size-container-max));
+  --size-font: calc(var(--size-container) / (var(--size-container-ideal) / var(--size-unit)));
+}
+
+/* Tablet */
+@media screen and (max-width: 991px) {
+  :root {
+    --size-container-ideal: 768; /* screen-size in design - no px */
+    --size-container-min: 768px;
+    --size-container-max: 991px;
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 767px) {
+  :root {
+    --size-container-ideal: 400; /* screen-size in design - no px */
+    --size-container-min: 480px;
+    --size-container-max: 767px;
+  }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 479px) {
+  :root {
+    --size-container-ideal: 400; /* screen-size in design - no px */
+    --size-container-min: 320px;
+    --size-container-max: 479px;
+  }
+}
+
+html {
+  font-size: var(--size-font);
+  scrollbar-width: none;
+  font-kerning: none; 
+  text-rendering: optimizeSpeed;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+    .wf-design-mode .contact, 
+    .wf-design-mode .info, 
+    .wf-design-mode .menu,
+    .wf-design-mode .filter_menu,
+    .wf-design-mode .work_filter_note {
+        display: none;
+    }
+}
+
+.wf-design-mode .cv_contact {
+	display: none;
+}
+
+.wf-design-mode .transition {
+	display: none;
+}
+
+#reel-100, #reel-10, .loader, .confirm {
+	opacity: 0
+}
+
+.main_help {
+	opacity: 0;
+  pointer-events: none;
+}
+
+.wf-design-mode .main_help {
+	opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- chunk --- */
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* --- chunk --- */
+
+.wf-design-mode .select_wrapper {
+	overflow: scroll;
+  scrollbar-width: none;
+}
+
+.wf-design-mode .select_mobile_block,
+.wf-design-mode .select_info_block {
+	position: static;
+  opacity: 0.5;
+}
+
+.wf-design-mode .select_names_a, .wf-design-mode .select_names_b {
+ 	height: max-content;
+}
+
+.select_blur{
+  --blur: 0px; 
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+
+/* --- chunk --- */
+
+.mute_svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #000000;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  display: block;
+}

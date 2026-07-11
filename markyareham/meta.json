@@ -1,0 +1,25 @@
+{
+  "slug": "markyareham",
+  "url": "https://www.markyareham.com/index",
+  "fetched_at": "2026-07-07T10:44:14.576437+00:00",
+  "status": 200,
+  "final_url": "https://www.markyareham.com/index",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 35499,
+  "stylesheets": [
+    "https://www.markyareham.com/assets/css/style.css",
+    "https://unpkg.com/swiper/swiper-bundle.min.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://www.markyareham.com/assets/css/style.css",
+      "file": "assets_css_style.css",
+      "bytes": 22074
+    },
+    {
+      "url": "https://unpkg.com/swiper/swiper-bundle.min.css",
+      "file": "swiper_swiper-bundle.min.css",
+      "bytes": 14610
+    }
+  ]
+}

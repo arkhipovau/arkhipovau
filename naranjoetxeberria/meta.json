@@ -1,0 +1,19 @@
+{
+  "slug": "naranjoetxeberria",
+  "url": "https://naranjoetxeberria.com/",
+  "fetched_at": "2026-07-07T10:43:13.140793+00:00",
+  "status": 200,
+  "final_url": "https://naranjoetxeberria.com/",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 424290,
+  "stylesheets": [
+    "https://naranjoetxeberria.com/wp-content/themes/ne/assets/css/style.css"
+  ],
+  "saved_stylesheets": [
+    {
+      "url": "https://naranjoetxeberria.com/wp-content/themes/ne/assets/css/style.css",
+      "file": "wp-content_themes_ne_assets_css_style.css",
+      "bytes": 1905
+    }
+  ]
+}

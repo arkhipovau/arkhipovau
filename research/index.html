@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Julie Arkhipova — Research">
+  <title>Research — Julie Arkhipova</title>
+  <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body data-page="research">
+
+  <main class="page-main page-main--research">
+    <section class="rs-slider" data-rs-slider aria-labelledby="research-heading">
+      <div class="rs-slider__inner">
+        <header class="rs-slider__header">
+          <h1 id="research-heading" class="rs-slider__title">Writing on perception, sculpture, and the politics of looking</h1>
+          <p class="rs-slider__lead">Essays published in 2023 — on immersive installation and spiritual dynamics in medieval stone.</p>
+        </header>
+
+        <div class="rs-slider__viewport">
+          <div class="rs-slider__track" data-rs-track></div>
+        </div>
+
+        <div class="rs-slider__nav">
+          <div class="rs-slider__pagination" data-rs-pagination role="tablist" aria-label="Research essays"></div>
+          <p class="rs-slider__counter type-meta" aria-live="polite">
+            <span data-rs-counter>1</span> / <span data-rs-total>2</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <script src="../site.js"></script>
+  <script>
+    const essays = [
+      {
+        title: 'Perception of Beauty in the Installations of Olafur Eliasson',
+        label: 'Olafur Eliasson',
+        year: '2023',
+        href: '../perception-of-beauty-in-the-installations-of-olafur-eliasson/',
+        img: '../assets/images/perception-of-beauty-in-the-installations-of-olafur-eliasson/image-02e22fd4-d402-4535-a58d-1461a1579a2f.jpg',
+        quote: 'Beauty is not only seen — it is staged, walked through, and felt in changing light.',
+        caption: 'Immersive installation as a laboratory for perception',
+      },
+      {
+        title: 'The Eyes of the Middle Ages. Expressing Spiritual Dynamics in Sculpture',
+        label: 'Medieval sculpture',
+        year: '2023',
+        href: '../the-eyes-of-the-middle-ages-expressing-spiritual-dynamics-in-sculpture/',
+        img: '../assets/images/the-eyes-of-the-middle-ages-expressing-spiritual-dynamics-in-sculpture/image-0475dd39-f18b-4f1b-bbb4-2af08cc091ee.jpg',
+        quote: 'The carved gaze holds theology in reserve — presence, absence, and spiritual pressure.',
+        caption: 'How medieval eyes express inner life in stone',
+      },
+    ];
+
+    const root = document.querySelector('[data-rs-slider]');
+    const track = root.querySelector('[data-rs-track]');
+    const pagination = root.querySelector('[data-rs-pagination]');
+    const counterEl = root.querySelector('[data-rs-counter]');
+    const totalEl = root.querySelector('[data-rs-total]');
+
+    const AUTOPLAY_MS = 8000;
+    let index = 0;
+    let offset = 0;
+    let slideW = 0;
+    let animating = false;
+    let timer = null;
+    let bullets = [];
+    let fills = [];
+
+    totalEl.textContent = String(essays.length);
+
+    function cardHtml(item) {
+      return `
+        <article class="rs-slider__card">
+          <div class="rs-slider__card-media">
+            <img src="${item.img}" alt="" loading="lazy" class="rs-slider__card-image">
+          </div>
+          <div class="rs-slider__card-content">
+            <p class="rs-slider__card-name">${item.label} · ${item.year}</p>
+            <p class="rs-slider__card-quote">“${item.quote}”</p>
+            <p class="rs-slider__card-caption">${item.caption}</p>
+          </div>
+        </article>
+      `;
+    }
+
+    function buildSlides() {
+      const clones = essays.map(item => `
+        <div class="rs-slider__slide" data-clone="true">
+          <a href="${item.href}" target="_blank" rel="noopener noreferrer" class="rs-slider__card-link">
+            ${cardHtml(item)}
+          </a>
+        </div>
+      `).join('');
+
+      const originals = essays.map((item, i) => `
+        <div class="rs-slider__slide" data-index="${i}">
+          <a href="${item.href}" target="_blank" rel="noopener noreferrer" class="rs-slider__card-link">
+            ${cardHtml(item)}
+          </a>
+        </div>
+      `).join('');
+
+      track.innerHTML = clones + originals + clones;
+    }
+
+    function buildPagination() {
+      pagination.innerHTML = essays.map((_, i) => `
+        <button type="button" class="rs-slider__bullet" role="tab" aria-selected="${i === 0 ? 'true' : 'false'}" data-bullet="${i}">
+          <span class="rs-slider__bullet-fill" aria-hidden="true"></span>
+        </button>
+      `).join('');
+
+      bullets = [...pagination.querySelectorAll('.rs-slider__bullet')];
+      fills = [...pagination.querySelectorAll('.rs-slider__bullet-fill')];
+
+      bullets.forEach(btn => {
+        btn.addEventListener('click', () => goTo(Number(btn.dataset.bullet), true));
+      });
+    }
+
+    function slides() {
+      return [...track.querySelectorAll('.rs-slider__slide')];
+    }
+
+    function realIndex(i) {
+      const n = essays.length;
+      return ((i % n) + n) % n;
+    }
+
+    function measure() {
+      const slide = track.querySelector('.rs-slider__slide');
+      if (!slide) return;
+      const card = slide.querySelector('.rs-slider__card');
+      const cardStyle = card ? getComputedStyle(card) : null;
+      slideW = (card?.offsetWidth || slide.offsetWidth)
+        + (cardStyle ? parseFloat(cardStyle.marginRight) || 0 : 0);
+      offset = essays.length;
+      setTransform(false);
+      updateActive();
+    }
+
+    function setTransform(animate = true) {
+      track.style.transition = animate
+        ? 'transform 0.75s cubic-bezier(0.45, 0, 0.55, 1)'
+        : 'none';
+      track.style.transform = `translate3d(${-(offset + index) * slideW}px, 0, 0)`;
+    }
+
+    function updateActive() {
+      const all = slides();
+      const activePos = offset + index;
+      all.forEach((slide, i) => {
+        slide.classList.toggle('rs-slider__slide--active', i === activePos);
+      });
+
+      const current = realIndex(index);
+      bullets.forEach((btn, i) => {
+        const on = i === current;
+        btn.classList.toggle('rs-slider__bullet--active', on);
+        btn.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+
+      counterEl.textContent = String(current + 1);
+      counterEl.style.transform = 'translateY(-2px)';
+      counterEl.style.opacity = '0.4';
+      requestAnimationFrame(() => {
+        counterEl.style.transition = 'transform 0.25s ease-out, opacity 0.25s ease-out';
+        counterEl.style.transform = 'translateX(0)';
+        counterEl.style.opacity = '1';
+      });
+    }
+
+    function resetProgress() {
+      fills.forEach((fill, i) => {
+        fill.style.transition = 'none';
+        fill.style.width = i === realIndex(index) ? '0%' : '0%';
+      });
+      const activeFill = fills[realIndex(index)];
+      if (!activeFill) return;
+      requestAnimationFrame(() => {
+        activeFill.style.transition = `width ${AUTOPLAY_MS}ms linear`;
+        activeFill.style.width = '100%';
+      });
+    }
+
+    function scheduleAutoplay() {
+      clearTimeout(timer);
+      resetProgress();
+      timer = setTimeout(() => goTo(index + 1), AUTOPLAY_MS);
+    }
+
+    function goTo(nextIndex, user = false) {
+      if (animating && !user) return;
+      animating = true;
+      index = nextIndex;
+      setTransform(true);
+      updateActive();
+      scheduleAutoplay();
+    }
+
+    track.addEventListener('transitionend', () => {
+      animating = false;
+      const n = essays.length;
+      if (index >= n) {
+        index = 0;
+        setTransform(false);
+        updateActive();
+      } else if (index < 0) {
+        index = n - 1;
+        setTransform(false);
+        updateActive();
+      }
+    });
+
+    let dragStart = null;
+    track.addEventListener('pointerdown', e => {
+      if (e.target.closest('a')) return;
+      dragStart = e.clientX;
+      track.setPointerCapture(e.pointerId);
+    });
+    track.addEventListener('pointerup', e => {
+      if (dragStart === null) return;
+      const delta = e.clientX - dragStart;
+      dragStart = null;
+      if (Math.abs(delta) > 40) goTo(index + (delta < 0 ? 1 : -1), true);
+    });
+
+    buildSlides();
+    buildPagination();
+    measure();
+    scheduleAutoplay();
+    window.addEventListener('resize', () => {
+      measure();
+      scheduleAutoplay();
+    });
+    if (document.fonts?.ready) document.fonts.ready.then(measure);
+  </script>
+</body>
+</html>

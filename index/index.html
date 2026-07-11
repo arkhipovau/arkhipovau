@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Julie Arkhipova — project index.">
+  <title>Index — Julie Arkhipova</title>
+  <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body data-page="index">
+
+  <main class="vb-page">
+    <section id="project-index">
+      <div class="table-headings">
+        <span><button type="button" class="body" data-sort="title">Project</button></span>
+        <span><button type="button" class="body" data-sort="type">Type</button></span>
+        <span><button type="button" class="body active" data-sort="year" data-dir="desc">Year</button></span>
+      </div>
+
+      <accordion-container id="index-list"></accordion-container>
+      <a href="../" class="body index-more">View all work</a>
+    </section>
+
+    <footer>
+      <div class="body">
+        <p>Contact:<br>
+          <a href="mailto:arkhipoovau@gmail.com"><word>arkhipoovau@gmail.com</word></a></p>
+        <p>Online:<br>
+          <a href="https://www.instagram.com/arkhipovau/" target="_blank" rel="noopener noreferrer"><word>Instagram</word></a><br>
+          <a href="https://www.linkedin.com/in/arkhipovau/" target="_blank" rel="noopener noreferrer"><word>LinkedIn</word></a></p>
+        <p>&nbsp;</p>
+        <small>© 2026</small>
+      </div>
+      <div class="body">
+        <p>Office Hours:<br>
+          Monday to Friday<br>
+          09:00 to 17:00 EST</p>
+        <small id="current-time" class="active" aria-live="polite"></small>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="../site.js"></script>
+  <script>
+    const projects = [
+      { title: 'Moretime Expeditions', type: 'Web Design', year: '2024', uri: 'moretime' },
+      { title: 'RUN–OPS', type: 'Brand Identity', year: '2024', uri: 'run-ops' },
+      { title: 'TokensFarm', type: 'Brand Identity', year: '2023', uri: 'tokensfarm' },
+      { title: 'Stanley Collection', type: 'Brand Identity', year: '2023', uri: '' },
+      { title: 'Crim', type: 'Brand Platform · Web', year: '2023', uri: '' },
+      { title: 'Burger Records', type: 'Brand Identity', year: '2023', uri: 'burger-records' },
+      { title: 'Geoprotech', type: 'Brand Identity', year: '2023', uri: 'geoprotech' },
+      { title: 'White Secret Mouthfreshers', type: 'Packaging', year: '2023', uri: 'white-secret-mouthfresher' },
+      { title: 'ARTDOM', type: 'Logotype', year: '2023', uri: 'artdom' },
+      { title: 'Magic Mirror', type: 'Brand Identity', year: '2022', uri: 'magic-mirror' },
+      { title: 'Mycopro', type: 'Brand Identity', year: '2022', uri: '' },
+      { title: 'NDA', type: 'Packaging', year: '2022', uri: '' },
+      { title: 'NDA', type: 'Key Visual', year: '2022', uri: '' },
+      { title: 'Zona Post', type: 'Website Concept', year: '2022', uri: '' },
+      { title: 'Sanduny', type: 'Website Concept', year: '2022', uri: '' },
+      { title: 'Veter Magazine', type: 'Full Stack Design', year: '2021', uri: '' },
+      { title: 'Chichilaki', type: 'Brand Identity', year: '2021', uri: '' },
+      { title: 'Illustrations Pack', type: 'Illustration', year: '2021', uri: 'illustrations-pack' },
+      { title: 'CuteQ', type: 'Logotype', year: '2021', uri: '' },
+      { title: 'Blanc', type: 'UX/UI Design', year: '2020', uri: '' },
+      { title: 'NDA', type: 'Packaging · Key Visual', year: '2020', uri: '' },
+      { title: 'Rhythmic', type: 'Product · Landing', year: '2020', uri: '' },
+      { title: 'Smile Gallery', type: 'Poster', year: '2020', uri: '' },
+      { title: 'NDA', type: 'Brand Identity', year: '2020', uri: '' },
+      { title: 'Fields&Boxes', type: 'Pet Project', year: '2019', uri: '' },
+      { title: 'NDA', type: 'Packaging · 14 Design Rounds', year: '2019', uri: '' },
+      { title: 'GAFA Architects', type: 'Logotype', year: '2019', uri: '' },
+      { title: 'NEXT', type: 'Content Design', year: '2019', uri: '' },
+      { title: 'Steford Accelerator', type: 'Landing Pages', year: '2019', uri: '' },
+      { title: 'Pharmacosmetica', type: 'Social Media Design Concept', year: '2019', uri: '' },
+      { title: '2gis', type: 'Key Visual · Video Production', year: '2019', uri: '' },
+      { title: 'Spirit of Insight', type: 'Packaging Concept', year: '2019', uri: '' },
+    ];
+
+    const list = document.getElementById('index-list');
+    const sortButtons = document.querySelectorAll('.table-headings [data-sort]');
+    let sortKey = 'year';
+    let sortDir = 'desc';
+    let heroMap = {};
+
+    function marqueeHtml(text) {
+      return `
+        <div class="vb-marquee" aria-hidden="true">
+          <div class="vb-marquee__track">
+            <span>${text}</span><span>${text}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function heroFor(p) {
+      const path = (p.uri && heroMap[p.uri]) || heroMap[p.title];
+      return path ? `../${path}` : '';
+    }
+
+    function panelHtml(p) {
+      const href = p.uri ? `../${p.uri}/` : '';
+      const hero = heroFor(p);
+      const thumb = hero ? `<div class="vb-index-thumb"><img src="${hero}" alt="" loading="lazy"></div>` : '';
+      const link = href
+        ? `<p><a href="${href}" target="_blank" rel="noopener noreferrer">View project</a></p>`
+        : `<p class="vb-index-muted">Not published online</p>`;
+      return `<div class="body">${thumb}${link}</div>`;
+    }
+
+    function rowHtml(p, i) {
+      return `
+        <accordion-element style="--table-index: ${i}" data-title="${p.title.toLowerCase()}" data-type="${p.type.toLowerCase()}" data-year="${p.year}">
+          <button type="button" action="accordion.toggle" aria-expanded="false">
+            <strong class="title">
+              <sub>${p.title}</sub>
+              <div class="table-overflow">${marqueeHtml(p.title)}</div>
+            </strong>
+            <strong class="body">${p.type}</strong>
+            <small class="body">${p.year}</small>
+          </button>
+          <accordion-inner>
+            <accordion-content>${panelHtml(p)}</accordion-content>
+          </accordion-inner>
+        </accordion-element>
+      `;
+    }
+
+    function markOverflow() {
+      list.querySelectorAll('strong.title').forEach(title => {
+        const sub = title.querySelector('sub');
+        if (!sub) return;
+        title.classList.toggle('overflow', sub.scrollWidth > title.clientWidth);
+      });
+    }
+
+    function bindRows() {
+      list.querySelectorAll('accordion-element').forEach(el => {
+        const btn = el.querySelector('[action="accordion.toggle"]');
+        btn.addEventListener('click', () => {
+          const open = !el.classList.contains('active');
+          list.querySelectorAll('accordion-element.active').forEach(other => {
+            if (other !== el) {
+              other.classList.remove('active', 'animate');
+              other.querySelector('[action="accordion.toggle"]')?.setAttribute('aria-expanded', 'false');
+            }
+          });
+          el.classList.toggle('active', open);
+          el.classList.add('animate');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+      requestAnimationFrame(markOverflow);
+    }
+
+    function renderList(items) {
+      list.innerHTML = items.map(rowHtml).join('');
+      bindRows();
+    }
+
+    function sortProjects() {
+      const sorted = [...projects].sort((a, b) => {
+        const key = sortKey === 'type' ? 'type' : sortKey;
+        let av = a[key];
+        let bv = b[key];
+        if (sortKey === 'year') {
+          av = Number(av);
+          bv = Number(bv);
+        } else {
+          av = String(av).toLowerCase();
+          bv = String(bv).toLowerCase();
+        }
+        if (av < bv) return sortDir === 'asc' ? -1 : 1;
+        if (av > bv) return sortDir === 'asc' ? 1 : -1;
+        return 0;
+      });
+      list.classList.add('is-sorting');
+      setTimeout(() => {
+        renderList(sorted);
+        list.classList.remove('is-sorting');
+      }, 120);
+    }
+
+    sortButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.sort;
+        if (key === sortKey) {
+          sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        } else {
+          sortKey = key;
+          sortDir = key === 'year' ? 'desc' : 'asc';
+        }
+        sortButtons.forEach(b => {
+          b.classList.toggle('active', b === btn);
+          if (b === btn) b.dataset.dir = sortDir;
+        });
+        sortProjects();
+      });
+    });
+
+    function updateClock() {
+      const el = document.getElementById('current-time');
+      if (!el) return;
+      const parts = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'America/New_York',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      }).formatToParts(new Date());
+      const get = type => parts.find(p => p.type === type)?.value || '00';
+      el.textContent = `${get('hour')}:${get('minute')}:${get('second')} EST`;
+    }
+
+    renderList([...projects].sort((a, b) => Number(b.year) - Number(a.year)));
+    updateClock();
+    setInterval(updateClock, 1000);
+    window.addEventListener('resize', markOverflow);
+
+    fetch('../assets/images/card-heroes.json')
+      .then(r => r.json())
+      .then(data => { heroMap = data; sortProjects(); })
+      .catch(() => {});
+  </script>
+</body>
+</html>
